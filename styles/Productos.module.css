@@ -1,0 +1,40 @@
+.products_container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_container {
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(3, 20em);
+    grid-template-rows: 10em 4em 4em;
+    align-items: center;
+    justify-items: center;
+}
+
+.button_price {
+    border: none;
+    padding: 8px;
+    background: crimson;
+    color: #fff;
+}
+
+.price {
+    display: none;
+}
+
+.button_price:hover {
+    background: rgb(247, 99, 128);
+    cursor: pointer;
+}
+
+.button_price:hover .price-text {
+    display: none; /* Oculta el texto "Price Text" cuando se pasa el ratón sobre el botón */
+  }
+  
+  .button_price:hover .price {
+    display: inline; /* Muestra el texto "Price" cuando se pasa el ratón sobre el botón */
+  }
+  
