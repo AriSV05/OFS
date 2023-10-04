@@ -4,7 +4,7 @@ export const connexion = mysql({
   config: {
     host: "localhost",
     user: "root",
-    password: "rootpasswor000d",
+    password: "rootpassword",
     port: 3306,
     database: "OFS",
   },

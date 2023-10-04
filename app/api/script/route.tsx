@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { script, scriptFront, scriptUpdate } from '@/bd/interfaces/scripts'
-import {getScripts, saveScript} from '@/bd/controller/BdController';
+import {getScripts, saveScript, getScriptsDB} from '@/bd/controller/BdController';
 
 
 
@@ -8,9 +8,9 @@ export const GET = async() => {
 
   const scripts = getScripts()
 
-  return NextResponse.json(
-    { scripts }
-  )
+  const scriptsDB = await getScriptsDB();
+
+  return NextResponse.json({ scriptsDB });
 
 }
 

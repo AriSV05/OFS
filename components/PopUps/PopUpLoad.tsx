@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Alert from "../Alert";
 
 const PopUp = ({
   isOpen,
@@ -13,19 +12,22 @@ const PopUp = ({
   scriptName: (name: string) => void;
 }) => {
   const [SelectedOption, setSelectedOption] = useState("1");
-  const [Options, setOptions] = useState([
-    {
-      id: "",
-      name: "",
-    },
-  ]);
+  const [Options, setOptions] = useState({
+    scriptsDB: [
+      {
+        id: 0,
+        name: "",
+        body: "",
+      },
+    ],
+  });
 
   const SelectOption = () => {
     return (
       <div>
         <select value={SelectedOption || ""} onChange={selectedOption}>
           <option value={"none"}>Select</option>
-          {Options.map((e) => (
+          {Options.scriptsDB.map((e) => (
             <option key={e.id} value={e.id}>
               {e.name}
             </option>
@@ -46,13 +48,9 @@ const PopUp = ({
 
       if (response.status === 200) {
         const responseData: {
-          scripts: Array<{
-            id: string;
-            name: string;
-            body: string;
-          }>;
+          scriptsDB: [];
         } = await response.json();
-        setOptions(responseData.scripts);
+        setOptions(responseData);
       } else {
         console.error("Error en la solicitud:", response.status);
       }
@@ -73,17 +71,16 @@ const PopUp = ({
       });
 
       if (response.status === 200) {
-
         const responseData: {
-          selectedScript: {
+          scriptInfo: {
             id: string;
             name: string;
             body: string;
           };
         } = await response.json();
-        const body = responseData.selectedScript.body;
-        const name = responseData.selectedScript.name;
-        const id = responseData.selectedScript.id;
+        const body = responseData.scriptInfo.body;
+        const name = responseData.scriptInfo.name;
+        const id = responseData.scriptInfo.id;
 
         const formaterBody = body.replace(/;/g, ";\n").replace(/{/g, "{\n");
 

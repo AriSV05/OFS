@@ -5,9 +5,71 @@ import fs from "fs";
 import { connexion } from "@/libs/mysql";
 import { script, scriptFront, scriptUpdate } from "@/bd/interfaces/scripts";
 
-export const selectNow = async() => {
-  const result = await connexion.query<{ NOW: string }[]>("SELECT NOW() AS NOW");
-  console.log(result[0].NOW)
+export const aboutDB = async () => {
+  const query = `
+    SELECT integrantes, universidad, escuela, asignatura, proyecto, ciclo
+    FROM ABOUT
+  `;
+  const result = await connexion.query<
+    {
+      integrantes: string;
+      universidad: string;
+      escuela: string;
+      asignatura: string;
+      proyecto: string;
+      ciclo: string;
+    }[]
+  >(query);
+
+  const aboutData = {
+    integrantes: JSON.parse(result[0].integrantes),
+    universidad: result[0].universidad,
+    escuela: result[0].escuela,
+    asignatura: result[0].asignatura,
+    proyecto: result[0].proyecto,
+    ciclo: result[0].ciclo,
+  };
+
+  return aboutData;
+};
+
+export const getScriptsDB = async () => {
+  const query = `
+  SELECT id, name, body
+  FROM scripts
+`;
+
+  const result = await connexion.query<
+    { id: number; name: string; body: string }[]
+  >(query);
+
+  const scriptsData = result.map((row) => ({
+    id: row.id,
+    name: row.name,
+    body: row.body,
+  }));
+
+  return scriptsData;
+};
+
+export const getScriptByIdDB = async (idparam: string) => {
+  const query = `
+    SELECT id, name, body
+    FROM scripts
+    WHERE id = ?
+  `;
+
+  const result = await connexion.query<
+    { id: string; name: string; body: string }[]
+  >(query, [idparam]);
+
+  const scriptData = {
+    id: result[0].id,
+    name: result[0].name,
+    body: result[0].body,
+  };
+
+  return scriptData;
 };
 
 export const getScripts = () => {

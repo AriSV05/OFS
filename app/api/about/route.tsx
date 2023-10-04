@@ -1,13 +1,10 @@
-
-import { NextResponse } from 'next/server'
-import { getAbout,selectNow } from '@/bd/controller/BdController';
+import { NextResponse } from "next/server";
+import { getAbout, aboutDB } from "@/bd/controller/BdController";
 
 export const GET = async () => {
+  const about = getAbout(); //TODO
 
-  const about = getAbout()
-  console.log(selectNow())
-  return NextResponse.json(
-    
-    { about }
-  )
-}
+  const aboutInfo = await aboutDB();
+
+  return NextResponse.json({ aboutInfo });
+};

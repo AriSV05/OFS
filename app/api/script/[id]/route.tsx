@@ -1,20 +1,13 @@
-import { scriptsInfo } from '@/data/scripts.json'
-import { NextResponse } from 'next/server'
-
+import { scriptsInfo } from "@/data/scripts.json";
+import { NextResponse } from "next/server";
+import { getScriptByIdDB } from "@/bd/controller/BdController";
 
 export const POST = async (
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  { params }: { params: { id: string } }
 ) => {
-    const scriptId = params.id
 
-    const selectedScript = scriptsInfo.find((script) => script.id == scriptId)
+  const scriptInfo = await getScriptByIdDB(params.id);
 
-
-    return NextResponse.json(
-        { selectedScript }
-    )
-
-}
-
-
+  return NextResponse.json({ scriptInfo });
+};
