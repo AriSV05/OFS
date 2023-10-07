@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import { getAbout, aboutDB } from "@/bd/controller/BdController";
+import { aboutFire } from "@/bd/controller/BdController";
 
 export const GET = async () => {
-  const about = getAbout(); //TODO
 
-  const aboutInfo = await aboutDB();
 
+  const aboutInfo = await aboutFire();
   return NextResponse.json({ aboutInfo });
 };

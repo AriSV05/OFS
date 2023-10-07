@@ -13,13 +13,13 @@ const PopUp = ({
 }) => {
   const [SelectedOption, setSelectedOption] = useState("1");
   const [Options, setOptions] = useState({
-    scriptsDB: [
+    scriptDB: [
       {
-        id: 0,
+        id: "",
         name: "",
         body: "",
-      },
-    ],
+      }
+    ]
   });
 
   const SelectOption = () => {
@@ -27,7 +27,7 @@ const PopUp = ({
       <div>
         <select value={SelectedOption || ""} onChange={selectedOption}>
           <option value={"none"}>Select</option>
-          {Options.scriptsDB.map((e) => (
+          {Options.scriptDB.map((e) => (
             <option key={e.id} value={e.id}>
               {e.name}
             </option>
@@ -48,8 +48,15 @@ const PopUp = ({
 
       if (response.status === 200) {
         const responseData: {
-          scriptsDB: [];
+          scriptDB: [
+            {
+              id: string;
+              name: string;
+              body: string;
+            }
+          ];
         } = await response.json();
+
         setOptions(responseData);
       } else {
         console.error("Error en la solicitud:", response.status);

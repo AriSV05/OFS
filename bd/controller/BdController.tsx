@@ -2,79 +2,69 @@ import { scriptsInfo } from "@/data/scripts.json";
 import { aboutInfo } from "@/data/about.json";
 import { wordsInfo } from "@/data/words.json";
 import fs from "fs";
-import { connexion } from "@/libs/mysql";
+import { db } from "@/libs/firebase";
 import { script, scriptFront, scriptUpdate } from "@/bd/interfaces/scripts";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  DocumentData,
+  setDoc,
+  doc,
+} from "firebase/firestore";
 
-export const aboutDB = async () => {
-  const query = `
-    SELECT integrantes, universidad, escuela, asignatura, proyecto, ciclo
-    FROM ABOUT
-  `;
-  const result = await connexion.query<
-    {
-      integrantes: string;
-      universidad: string;
-      escuela: string;
-      asignatura: string;
-      proyecto: string;
-      ciclo: string;
-    }[]
-  >(query);
+export const aboutFire = async () => {
+  const querySnapshot = await getDocs(collection(db, "about"));
 
-  const aboutData = {
-    integrantes: JSON.parse(result[0].integrantes),
-    universidad: result[0].universidad,
-    escuela: result[0].escuela,
-    asignatura: result[0].asignatura,
-    proyecto: result[0].proyecto,
-    ciclo: result[0].ciclo,
-  };
+  if (!querySnapshot.empty) {
+    const aboutData: {
+      data: DocumentData;
+    } = {
+      data: querySnapshot.docs[0].data(),
+    };
 
-  return aboutData;
+    return aboutData;
+  } else {
+    return {}; // La colección está vacía, retornamos un objeto vacío
+  }
 };
 
-export const getScriptsDB = async () => {
-  const query = `
-  SELECT id, name, body
-  FROM scripts
-`;
+export const getAllScriptsFire = async () => {
+  // Realizar una consulta para obtener todos los documentos en la colección
+  const querySnapshot = await getDocs(collection(db, "scripts"));
 
-  const result = await connexion.query<
-    { id: number; name: string; body: string }[]
-  >(query);
-
-  const scriptsData = result.map((row) => ({
-    id: row.id,
-    name: row.name,
-    body: row.body,
-  }));
+  // Transformar los datos de Firestore en un formato similar a MySQL
+  const scriptsData = querySnapshot.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      name: data.name,
+      body: data.body,
+    };
+  });
 
   return scriptsData;
 };
 
-export const getScriptByIdDB = async (idparam: string) => {
-  const query = `
-    SELECT id, name, body
-    FROM scripts
-    WHERE id = ?
-  `;
+export const getScriptByIdFire = async (idparam: string) => {
+  const docRef = doc(db, "scripts", idparam);
+  const docSnapshot = await getDoc(docRef);
 
-  const result = await connexion.query<
-    { id: string; name: string; body: string }[]
-  >(query, [idparam]);
-
-  const scriptData = {
-    id: result[0].id,
-    name: result[0].name,
-    body: result[0].body,
-  };
-
-  return scriptData;
+  if (docSnapshot.exists()) {
+    const scriptData = docSnapshot.data();
+    return {
+      id: docSnapshot.id,
+      name: scriptData.name,
+      body: scriptData.body,
+    };
+  } else {
+    console.error("El script no existe");
+    return null; // O puedes lanzar un error aquí si prefieres manejarlo de esa manera
+  }
+    
 };
 
-export const getScripts = () => {
-  return scriptsInfo;
-};
 
 export const saveScript = (script: scriptFront): void => {
   const newScript: script = {
@@ -126,9 +116,6 @@ export const updateScriptName = (script: scriptUpdate, id: string): boolean => {
 //     };
 // }
 
-export const getAbout = () => {
-  return aboutInfo;
-};
 
 export const getWords = () => {
   return wordsInfo;

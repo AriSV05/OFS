@@ -1,28 +1,19 @@
-import { NextResponse } from 'next/server'
-import { script, scriptFront, scriptUpdate } from '@/bd/interfaces/scripts'
-import {getScripts, saveScript, getScriptsDB} from '@/bd/controller/BdController';
+import { NextResponse } from "next/server";
+import { scriptFront } from "@/bd/interfaces/scripts";
+import { saveScript, getAllScriptsFire } from "@/bd/controller/BdController";
 
+export const GET = async () => {
+  const scriptDB = await getAllScriptsFire();
 
+  return NextResponse.json({ scriptDB });
+};
 
-export const GET = async() => {
-
-  const scripts = getScripts()
-
-  const scriptsDB = await getScriptsDB();
-
-  return NextResponse.json({ scriptsDB });
-
-}
-
-export async function POST(
-  request: Request
-) {
+export async function POST(request: Request) {
+  //UTILIDAD? TODO
   //Endpoint POST to save a new script
-  const res: scriptFront = await request.json()
-  saveScript(res)
-  return NextResponse.json(
-    {}
-  )
+  const res: scriptFront = await request.json();
+  saveScript(res);
+  return NextResponse.json({});
 }
 
 // export async function PUT(

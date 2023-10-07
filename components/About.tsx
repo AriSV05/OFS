@@ -42,15 +42,17 @@ const About = () => {
       if (response.status === 200) {
         const responseData: {
           aboutInfo: {
-            integrantes: [""];
-            universidad: string;
-            escuela: string;
-            asignatura: string;
-            proyecto: string;
-            ciclo: string;
+            data: {
+              integrantes: [""];
+              universidad: string;
+              escuela: string;
+              asignatura: string;
+              proyecto: string;
+              ciclo: string;
+            };
           };
         } = await response.json();
-        setAboutText(responseData.aboutInfo);
+        setAboutText(responseData.aboutInfo.data);
       } else {
         console.error("Error en la solicitud:", response.status);
       }
