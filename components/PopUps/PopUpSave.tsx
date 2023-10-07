@@ -30,7 +30,7 @@ const PopUpSave = ({
       body: EAstate,
     };
     try {
-      const response = await fetch("/api/script", {
+      const response = await fetch("/api/save", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

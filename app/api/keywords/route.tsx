@@ -1,15 +1,8 @@
 import { NextResponse } from "next/server";
-import { getWords } from "@/bd/controller/BdController";
+import { getWordsFire } from "@/bd/controller/BdController";
 
 export const GET = async () => {
-  try {
-    const words = getWords();
+  const words = await getWordsFire();
 
-    return NextResponse.json({ words });
-
-  } catch {
-
-    return NextResponse.json({ status: 500 });
-    
-  }
+  return NextResponse.json({ words });
 };

@@ -1,24 +1,4 @@
 
-/*import { NextResponse } from 'next/server'
- 
-
-
-export async function POST( request: Request ) {
-    
-    const requestBodyText = await request.json();
-
-    const lines = requestBodyText.split('\n');
-    const codigo = lines.slice(2).join('\n');
-
-    const newRes= {
-        timestamp: new Date(),
-        text: codigo
-    }
-    return NextResponse.json({ newRes })
-}*/
-
-
-
 import { NextResponse } from 'next/server';
 import { writeToFile } from '@/bd/controller/BdController';
 

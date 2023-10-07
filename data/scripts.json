@@ -1,1 +1,0 @@
-{"scriptsInfo":[{"id":"1","name":"333","body":"console.log(Ciclo for:);for (let i = 1; i <= 5; i++) { console.log(i);}"},{"id":"2","name":"RRRRR","body":"console.log(Ciclo while:);let j = 6;while (j <= 10) {  console.log(j); j++;}"},{"id":"3","name":"prueba2","body":"break case \na b c\ntry\ntry\n"},{"id":"4","name":"return 0","body":"return 0"}]}

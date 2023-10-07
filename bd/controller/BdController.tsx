@@ -1,17 +1,13 @@
-import { scriptsInfo } from "@/data/scripts.json";
-import { aboutInfo } from "@/data/about.json";
-import { wordsInfo } from "@/data/words.json";
-import fs from "fs";
 import { db } from "@/libs/firebase";
-import { script, scriptFront, scriptUpdate } from "@/bd/interfaces/scripts";
+import fs from 'fs'
 import {
-  getFirestore,
   collection,
   getDocs,
   getDoc,
   DocumentData,
   setDoc,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 
 export const aboutFire = async () => {
@@ -62,63 +58,48 @@ export const getScriptByIdFire = async (idparam: string) => {
     console.error("El script no existe");
     return null; // O puedes lanzar un error aquí si prefieres manejarlo de esa manera
   }
-    
 };
 
+export const getWordsFire = async () => {
+  const querySnapshot = await getDocs(collection(db, "words"));
 
-export const saveScript = (script: scriptFront): void => {
-  const newScript: script = {
-    id: (scriptsInfo.length + 1).toString(),
+  const wordsData: {
+    data: DocumentData;
+  } = {
+    data: querySnapshot.docs[0].data(),
+  };
+
+  return wordsData.data.words;
+};
+
+export const saveScriptFire = async (script: {
+  name: string;
+  body: string;
+}) => {
+  const querySnapshot = await getDocs(collection(db, "scripts"));
+  const totalScripts = querySnapshot.size;
+
+  // Calcula el nuevo ID sumando 1 al total de scripts
+  const newScriptId = (totalScripts + 1).toString();
+
+  // Crea un nuevo documento en la colección con el nuevo ID y datos del script
+  await setDoc(doc(collection(db, "scripts"), newScriptId), {
     name: script.name,
     body: script.body,
-  };
-  const newScriptsInfo = [...scriptsInfo, newScript];
-  const scripts = {
-    scriptsInfo: newScriptsInfo,
-  };
-  const newScriptsObj = JSON.stringify(scripts);
-
-  //Ruta al archivo JSON
-
-  fs.writeFileSync("./data/scripts.json", newScriptsObj);
-};
-
-export const updateScriptName = (script: scriptUpdate, id: string): boolean => {
-  let updated: boolean = false;
-  scriptsInfo.forEach((scriptElement) => {
-    if (scriptElement.id === id) {
-      scriptElement.name = script.name;
-      updated = true;
-    }
   });
-
-  if (updated) {
-    const scripts = {
-      scriptsInfo: scriptsInfo,
-    };
-
-    const newScriptsObj = JSON.stringify(scripts);
-
-    //Ruta al archivo JSON
-
-    fs.writeFileSync("./data/scripts.json", newScriptsObj);
-    return updated;
-  }
-  return updated;
 };
 
-// private modificarValorPorId = (id: string, nuevoValor: string) => (objeto: script) => {
-//     if (objeto.id === id) {
-//         objeto.name = nuevoValor
-//         return objeto
-//     } else {
-//         return objeto
-//     };
-// }
+export const updateScriptFire = async (
+  script: { name: string; body: string },
+  idparam: string
+) => {
+  const scriptDocRef = doc(collection(db, "scripts"), idparam);
 
-
-export const getWords = () => {
-  return wordsInfo;
+  // El documento ya existe, así que lo actualizamos
+  await updateDoc(scriptDocRef, {
+    name: script.name,
+    body: script.body,
+  });
 };
 
 export async function writeToFile(
