@@ -40,7 +40,7 @@ const PopUpSave = ({
 
       if (response.status === 200) {
         window.confirm("Archivo Guardado");
-        scriptName(name);
+        scriptName(name+".ofs");
       } else {
         console.error("Error en la solicitud:", response.status);
       }
@@ -65,7 +65,7 @@ const PopUpSave = ({
 
       if (response.status === 200) {
         window.confirm("Archivo Guardado");
-        scriptName(name);
+        scriptName(name+".ofs");
       } else {
         console.error("Error en la solicitud:", response.status);
       }

@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server';
-import { writeToFile } from '@/bd/controller/BdController';
+import { writeToFile } from '@/Controller/Controller';
 
 export const POST = async (request: Request) => {
 

@@ -24,7 +24,7 @@ const PopUp = ({
 
   const SelectOption = () => {
     return (
-      <div>
+      <>
         <select value={SelectedOption || ""} onChange={selectedOption}>
           <option value={"none"}>Select</option>
           {Options.scriptDB.map((e) => (
@@ -33,7 +33,7 @@ const PopUp = ({
             </option>
           ))}
         </select>
-      </div>
+      </>
     );
   };
 

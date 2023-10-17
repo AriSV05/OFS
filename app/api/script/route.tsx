@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAllScriptsFire } from "@/bd/controller/BdController";
+import { getAllScriptsFire } from "@/Controller/Controller";
 
 export const GET = async () => {
   const scriptDB = await getAllScriptsFire();

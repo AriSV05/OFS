@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { aboutFire } from "@/bd/controller/BdController";
+import { aboutFire } from "@/Controller/Controller";
 
 export const GET = async () => {
 

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateScriptFire } from "@/bd/controller/BdController";
+import { updateScriptFire } from "@/Controller/Controller";
 
 export const POST = async (
   request: Request,

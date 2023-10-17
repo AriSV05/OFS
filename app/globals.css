@@ -84,8 +84,7 @@ code {
 .text-container {
   display: grid;
   grid-template-columns: repeat(3, 33%);
-  height: 60%;
-  height: 60vh;
+  height: 65vh;
 }
 
 .EA-container {
@@ -132,8 +131,8 @@ code {
 
 .select-word {
   position: absolute;
-  top: 22.6%;
-  left: 26.5%;
+  top: 24.6%;
+  left: 29%;
 }
 
 .select-word select {
@@ -160,7 +159,8 @@ code {
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  height: 45%;
+  width: 20%;
+  height: 13%;
 }
 
 .overlay {
@@ -192,6 +192,14 @@ code {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   width: 30%;
+}
+
+.popup-container-load select {
+  width: 100%;
+  border: none;
+  background-color: rgb(199, 199, 199);
+  padding: 0.4vh;
+  margin: 1vh 0;
 }
 
 .popup-container-save > input {
