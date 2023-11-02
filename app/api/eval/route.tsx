@@ -32,7 +32,7 @@ export const POST = async (request: Request) => {
 import exec from 'child_process';
 const executeScript = async() : Promise<string> => {
     return new Promise((resolve, reject) => {
-      exec.exec(`node C:/Users/Nicole/Desktop/proyecto/OFS/data/script.js`, (error, stdout) => {
+      exec.exec(`node data/script.js`, (error, stdout) => {
         if (error) {
           reject(`Error al ejecutar el código: ${error.message}`);
         } else {
