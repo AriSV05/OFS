@@ -2,6 +2,7 @@ import React from "react";
 
 const Compile = ({
   EAState,
+  ScriptId,
   setScripTAName,
   setAlertState,
   setAlertText,
@@ -11,6 +12,7 @@ const Compile = ({
   setCountedTALines,
 }: {
   EAState: string;
+  ScriptId:string
   setScripTAName: (text: string) => void;
   setAlertState: (show: boolean) => void;
   setAlertText: (text: string) => void;
@@ -34,11 +36,14 @@ const Compile = ({
   };
 
   const compile = async () => {
-    const data = EAState;
-    setScripTAName(`${ScriptName}.js`);
+    const data = {id:ScriptId,
+      body:EAState,
+    name:ScriptName};
 
-    trimming(data);
-    if (data.length == 0) {
+    setScripTAName(`${ScriptName.replace('.ofs', '')}.js`);
+
+    trimming(EAState);
+    if (EAState.length == 0) {
       setAlertState(true);
       setAlertText("EA se encuentra vacio");
       setScripTAName(".js");
@@ -51,6 +56,7 @@ const Compile = ({
           headers: {
             "Content-Type": "application/json",
           },
+          cache: 'no-store' 
         });
 
         if (response.status === 200) {
@@ -70,9 +76,9 @@ const Compile = ({
         }
       } catch (error) {
         console.error("Error:", error);
-      }
-    }
-  };
+      }
+    }
+  };
   return (
     <>
       <button onClick={compile} className="button">

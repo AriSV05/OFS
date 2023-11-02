@@ -67,6 +67,7 @@ const Principal = () => {
 
           <Compile
             EAState={EAState}
+            ScriptId = {ScriptId}
             setScripTAName={setScripTAName}
             setAlertState={setAlertState}
             setAlertText={setAlertText}

@@ -37,6 +37,7 @@ const About = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: 'no-store'
       });
 
       if (response.status === 200) {

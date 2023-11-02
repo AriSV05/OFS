@@ -102,7 +102,7 @@ export const updateScriptFire = async (
   });
 };
 
-export async function writeToFile(
+export async function appendToFile(
   filePath: string,
   data: string
 ): Promise<void> {
@@ -114,3 +114,18 @@ export async function writeToFile(
     throw error;
   }
 }
+
+
+export async function overwriteFile(
+  filePath: string,
+  data: string
+): Promise<void> {
+  try {
+    // Escribe la cadena JSON en el archivo
+    await fs.promises.writeFile(filePath, data + "\n");
+  } catch (error) {
+    console.error("Error al escribir en el archivo:", error);
+    throw error;
+  }
+}
+
