@@ -25,8 +25,16 @@ Seguidamente se deben instalar todas las dependencias que necesita la aplicació
 ```
 npm install 
 ```
-Finalmente se hace ejecución del 'Node.js server'. Next.js utiliza Node.js como su entorno de ejecución del lado del servidor para renderizar páginas y servir contenido en el lado del servidor. Se correra en modo build.
+## Ejecución
+
+Para ejecutar el servidor 'Node.js server'. Next.js utiliza Node.js como su entorno de ejecución para renderizar páginas y servir contenido en el lado del cliente. Se correra en modo build.
 ```
 npm run build
 npm start
+```
+
+Para ejecutar el sevidor de prolog, quien se encargara de transpilar los archivos generados en el cliente, se corre de la siguiente manera.
+```
+cd prolog
+swipl http_server.pl
 ```
