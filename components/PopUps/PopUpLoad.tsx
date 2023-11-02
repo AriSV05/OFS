@@ -44,6 +44,7 @@ const PopUp = ({
         headers: {
           "Content-Type": "application/json",
         },
+        cache: 'no-store' 
       });
 
       if (response.status === 200) {
@@ -75,6 +76,7 @@ const PopUp = ({
         headers: {
           "Content-Type": "application/json",
         },
+        cache: 'no-store' 
       });
 
       if (response.status === 200) {
@@ -115,7 +117,7 @@ const PopUp = ({
   };
 
   useEffect(() => {
-    getAllScripts();
+    getAllScripts(); 
   }, []);
 
   return (

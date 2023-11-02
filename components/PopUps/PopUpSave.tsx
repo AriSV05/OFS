@@ -36,6 +36,7 @@ const PopUpSave = ({
         headers: {
           "Content-Type": "application/json",
         },
+        cache: 'no-store' 
       });
 
       if (response.status === 200) {
@@ -61,6 +62,7 @@ const PopUpSave = ({
         headers: {
           "Content-Type": "application/json",
         },
+        cache: 'no-store' 
       });
 
       if (response.status === 200) {
