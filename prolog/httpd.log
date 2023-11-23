@@ -15,3 +15,124 @@ completed(6, 0.0, 896, 200, ok).
 completed(7, 0.0, 883, 200, ok).
 /*Wed Nov 01 19:50:43 2023*/ request(8, 1698889843.770, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
 completed(8, 0.0, 894, 200, ok).
+server(started, 1700765302).
+/*Thu Nov 23 12:48:21 2023*/ request(1, 1700765301.778, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.03125, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001b7b99efeb0),<stream>(000001b7b99f0fb0))),input(<stream>(000001b7b99efeb0)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+/*Thu Nov 23 12:49:25 2023*/ request(2, 1700765365.947, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(2, 0.0, 573, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001b7b99f2d70),<stream>(000001b7b99f2820))),input(<stream>(000001b7b99f2d70)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_4332/_4334,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700765435).
+server(started, 1700765465).
+/*Thu Nov 23 12:51:05 2023*/ request(1, 1700765465.396, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.015625, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0000021380b2a230),<stream>(0000021380b29df0))),input(<stream>(0000021380b2a230)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700765534).
+server(started, 1700765553).
+/*Thu Nov 23 12:52:32 2023*/ request(1, 1700765552.735, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.0, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(00000221177faec0),<stream>(00000221177fcc80))),input(<stream>(00000221177faec0)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+/*Thu Nov 23 12:58:45 2023*/ request(2, 1700765925.559, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(11)]).
+completed(2, 0.0, 574, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(00000221177f9980),<stream>(00000221177fa0f0))),input(<stream>(00000221177f9980)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_4662/_4664,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(11)])")).
+server(stopped, 1700766308).
+server(started, 1700766347).
+/*Thu Nov 23 13:05:47 2023*/ request(1, 1700766347.399, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.015625, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0000022889130120),<stream>(0000022889133860))),input(<stream>(0000022889130120)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+/*Thu Nov 23 13:07:13 2023*/ request(2, 1700766433.740, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(11)]).
+completed(2, 0.0, 574, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0000022889132760),<stream>(0000022889132980))),input(<stream>(0000022889132760)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_4662/_4664,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(11)])")).
+server(stopped, 1700766662).
+server(started, 1700766727).
+/*Thu Nov 23 13:12:06 2023*/ request(1, 1700766726.956, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(11)]).
+completed(1, 0.015625, 572, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(00000128bcc7c970),<stream>(00000128bcc7ca80))),input(<stream>(00000128bcc7c970)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(11)])")).
+server(stopped, 1700767189).
+server(started, 1700767304).
+/*Thu Nov 23 13:21:43 2023*/ request(1, 1700767303.759, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.03125, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000002b01d081bc0),<stream>(000002b01d081cd0))),input(<stream>(000002b01d081bc0)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700768069).
+server(started, 1700768090).
+/*Thu Nov 23 13:34:49 2023*/ request(1, 1700768089.917, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.04687500000000001, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0000025b0d028d60),<stream>(0000025b0d026e90))),input(<stream>(0000025b0d028d60)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+/*Thu Nov 23 13:49:04 2023*/ request(2, 1700768944.784, [peer(ip(127,0,0,1)),method(get),request_uri(/),path(/),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),sec_ch_ua('"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"'),sec_ch_ua_mobile('?0'),sec_ch_ua_platform('"Windows"'),upgrade_insecure_requests('1'),user_agent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'),sec_fetch_site(none),sec_fetch_mode(navigate),sec_fetch_user('?1'),sec_fetch_dest(document)]).
+completed(2, 0.015624999999999993, 177, 200, ok).
+/*Thu Nov 23 13:49:04 2023*/ request(3, 1700768944.932, [peer(ip(127,0,0,1)),method(get),request_uri('/favicon.ico'),path('/favicon.ico'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),sec_ch_ua('"Microsoft Edge";v="119", "Chromium";v="119", "Not?A_Brand";v="24"'),sec_ch_ua_mobile('?0'),user_agent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0'),sec_ch_ua_platform('"Windows"'),sec_fetch_site('same-origin'),sec_fetch_mode('no-cors'),sec_fetch_dest(image),referer('http://localhost:8000/')]).
+completed(3, 0.0, 93, 404, error(404,'/favicon.ico')).
+/*Thu Nov 23 13:49:17 2023*/ request(4, 1700768957.858, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(4, 0.0, 573, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(0000025b0d027b50),<stream>(0000025b0d029d50))),input(<stream>(0000025b0d027b50)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_4324/_4326,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700769520).
+server(started, 1700769576).
+/*Thu Nov 23 13:59:36 2023*/ request(1, 1700769576.180, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.03125, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001cd17aea4c0),<stream>(000001cd17aea190))),input(<stream>(000001cd17aea4c0)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700769773).
+server(started, 1700769795).
+/*Thu Nov 23 14:03:14 2023*/ request(1, 1700769794.660, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.015625, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001d9b5ef8e00),<stream>(000001d9b5ef78c0))),input(<stream>(000001d9b5ef8e00)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700770005).
+server(started, 1700770275).
+/*Thu Nov 23 14:11:14 2023*/ request(1, 1700770274.678, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.015625, 121, 200, ok).
+server(stopped, 1700770313).
+server(started, 1700770327).
+/*Thu Nov 23 14:12:07 2023*/ request(1, 1700770327.484, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.015625, 121, 200, ok).
+server(stopped, 1700770749).
+server(started, 1700770862).
+/*Thu Nov 23 14:21:02 2023*/ request(1, 1700770862.307, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.0, 571, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001e0c7715ba0),<stream>(000001e0c7714880))),input(<stream>(000001e0c7715ba0)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_702/_704,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+/*Thu Nov 23 14:28:26 2023*/ request(2, 1700771306.185, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(2, 0.0, 573, 500, error("goal unexpectedly failed: user:handle_transpilador([protocol(http),peer(ip(127,0,0,1)),pool(client('httpd@8000',user:http_dispatch,<stream>(000001e0c7714550),<stream>(000001e0c7714ff0))),input(<stream>(000001e0c7714550)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),accept([media(_4332/_4334,[],1.0,[])]),accept_language(*),sec_fetch_mode(cors),user_agent(undici),accept_encoding('gzip, deflate'),content_length(8)])")).
+server(stopped, 1700771346).
+server(started, 1700771366).
+/*Thu Nov 23 14:29:26 2023*/ request(1, 1700771366.465, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(1, 0.03125, 79, 200, ok).
+/*Thu Nov 23 14:35:41 2023*/ request(2, 1700771741.116, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(2, 0.0, 79, 200, ok).
+/*Thu Nov 23 14:40:25 2023*/ request(3, 1700772025.472, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(8)]).
+completed(3, 0.0, 79, 200, ok).
+/*Thu Nov 23 14:43:11 2023*/ request(4, 1700772191.148, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(4, 0.0, 82, 500, error("source_sink `'ofs_test.ofs.mjs'' does not exist")).
+server(stopped, 1700772262).
+server(started, 1700772277).
+/*Thu Nov 23 14:44:37 2023*/ request(1, 1700772277.409, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(1, 0.015625, 102, 500, error("Illegal HTTP parameter: *** ofs_test.ofs was correctly parsed!! ***")).
+server(stopped, 1700772348).
+server(started, 1700772364).
+/*Thu Nov 23 14:46:04 2023*/ request(1, 1700772364.146, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(1, 0.03125, 84, 500, error("Illegal HTTP parameter: Starting code generation.")).
+server(stopped, 1700772386).
+server(started, 1700772398).
+/*Thu Nov 23 14:46:38 2023*/ request(1, 1700772398.400, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(1, 0.03125, 84, 500, error("Illegal HTTP parameter: Starting code generation.")).
+server(stopped, 1700772585).
+server(started, 1700772682).
+/*Thu Nov 23 14:51:22 2023*/ request(1, 1700772682.170, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(278)]).
+completed(1, 0.03125, 1918, 200, ok).
+/*Thu Nov 23 14:51:48 2023*/ request(2, 1700772708.951, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(2, 0.0, 19, 200, ok).
+/*Thu Nov 23 14:53:32 2023*/ request(3, 1700772812.484, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(3, 0.0, 19, 200, ok).
+/*Thu Nov 23 14:54:16 2023*/ request(4, 1700772856.562, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(4, 0.0, 19, 200, ok).
+/*Thu Nov 23 14:57:17 2023*/ request(5, 1700773037.700, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(5, 0.015625, 19, 200, ok).
+/*Thu Nov 23 14:58:02 2023*/ request(6, 1700773082.252, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(6, 0.0, 19, 200, ok).
+/*Thu Nov 23 15:25:48 2023*/ request(7, 1700774748.253, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(7, 0.0, 19, 200, ok).
+/*Thu Nov 23 15:26:35 2023*/ request(8, 1700774795.270, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(45)]).
+completed(8, 0.0, 19, 200, ok).
+server(stopped, 1700775315).
+server(started, 1700775371).
+/*Thu Nov 23 15:36:10 2023*/ request(1, 1700775370.971, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(707)]).
+completed(1, 0.03125, 84, 500, error("Illegal HTTP parameter: Starting code generation.")).
+server(stopped, 1700775406).
+server(started, 1700775417).
+/*Thu Nov 23 15:36:57 2023*/ request(1, 1700775417.302, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(707)]).
+completed(1, 0.04687500000000001, 2440, 200, ok).
+/*Thu Nov 23 15:37:22 2023*/ request(2, 1700775442.978, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(499)]).
+completed(2, 0.015625, 1551, 200, ok).
+/*Thu Nov 23 15:37:44 2023*/ request(3, 1700775464.691, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(499)]).
+completed(3, 0.015625, 1551, 200, ok).
+server(stopped, 1700775980).
+server(started, 1700776018).
+/*Thu Nov 23 15:46:58 2023*/ request(1, 1700776018.146, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(499)]).
+completed(1, 0.0, 1551, 200, ok).
+server(stopped, 1700776264).
+server(started, 1700776512).
+/*Thu Nov 23 15:55:12 2023*/ request(1, 1700776512.468, [peer(ip(127,0,0,1)),method(post),request_uri('/transpilador'),path('/transpilador'),http_version(1-1),host(localhost),port(8000),connection('keep-alive'),content_type('application/json'),sec_fetch_mode(cors),user_agent(undici),content_length(499)]).
+completed(1, 0.03125, 1551, 200, ok).

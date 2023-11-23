@@ -61,15 +61,16 @@ const Compile = ({
 
         if (response.status === 200) {
           const responseData: {
-            newRes: { timestamp: string; text: string };
+            newRes: { timestamp: string; text: {text:string} };
           } = await response.json();
           setTAState(
             "Time Stamp:" +
               responseData.newRes.timestamp +
+              "\n\nimport {Stream} from generador.mjs"+
               "\n\n" +
-              responseData.newRes.text
+              responseData.newRes.text.text
           );
-          contador(responseData.newRes.text);
+          contador(responseData.newRes.text.text);
 
         } else {
           console.error("Error en la solicitud:", response.status);

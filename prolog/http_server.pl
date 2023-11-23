@@ -8,7 +8,7 @@
 
 :- use_module(library(http/html_write)).
 
-
+:-[test_parser].
 
 :- http_handler('/transpilador', handle_transpilador, [method(post)]).
 :- http_handler('/', home, []).
@@ -22,18 +22,27 @@ handle_transpilador(Request) :-
 
 
 % Predicado para buscar un script por ID en un archivo JSON
-solve(_{id: Id}, Response) :-
-    read_json_file('scripts.json', JSON),
-    (member(Element, JSON), Element.id = Id -> Response = Element.script; Response = 'Error: script not found').
+solve(_{id: Id, name:Name, body:Body}, _{text: Transpiled}) :-
+    write_ofs(Name, Body),
+    test_parser(Name),
+    atomic_list_concat([Name,js], '.', NameJS),
+    read_file_to_codes(NameJS, TranspiledCodes, []),
+    string_codes(Transpiled, TranspiledCodes).
 
+solve(_, _{accepted: false, answer:0, msg:'Error: failed number validation'}).
+
+write_ofs(Filename, Text):-
+    open(Filename, write, Stream),
+    format(Stream, '~s', [Text]),
+    close(Stream).
 
 
 % Predicado para leer un archivo JSON y convertirlo en una lista de términos
-read_json_file(File, JSON) :-
+/*read_json_file(File, JSON) :-
     open(File, read, Stream),
     json_read_dict(Stream, JSON),
     close(Stream).
-
+*/
 
 server(Port) :-
     http_server(http_dispatch, [port(Port)]).
