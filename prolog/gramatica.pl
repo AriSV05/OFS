@@ -9,7 +9,7 @@ import_start([]) --> [].
 import_statement([I | R]) --> spaces, "import", spaces, imported_symbols(I), spaces, fromStatement(R).
 fromStatement(from(S)) --> "from", spaces, string(S), spaces.
 
-imported_symbols([I | R]) --> "{", spaces, ident(I), spaces, rest_idents(R), "}".
+imported_symbols(corchete([I | R]) ) --> "{", spaces, ident(I), spaces, rest_idents(R), "}".
 imported_symbols(I) --> ident(I).
 
 rest_idents(more_id([I,R])) --> spaces, ",", spaces, ident(I), spaces, rest_idents(R).
@@ -74,7 +74,7 @@ conditional_expression([R, E1| E2]) --> relational_expression(R), spaces, "?", s
 
 arith_expression([F | R]) --> factor_expression(F), rest_arith_expression(R).
 
-rest_arith_expression([A, F | R]) --> spaces, arith_operator(A), spaces, factor_expression(F),spaces, rest_arith_expression(R).
+rest_arith_expression([A, F | R]) --> arith_operator(A), factor_expression(F), rest_arith_expression(R).
 rest_arith_expression([]) --> [].
 
 factor_expression(literal(L)) --> literal_expression(L). 
@@ -86,7 +86,7 @@ literal_expression(number(N)) --> number(N).
 literal_expression(string(S)) --> string(S).
 literal_expression(boolean(B)) --> boolean(B).
 
-simple_expression([Q | R]) --> spaces, qualifiable_id(Q), rest_simple_expr(R).
+simple_expression([Q | R]) --> qualifiable_id(Q), rest_simple_expr(R).
 rest_simple_expr(E) --> spaces, "=", spaces, expression(E).
 rest_simple_expr(A) --> args_expression(A).
 rest_simple_expr([]) --> [].
@@ -95,12 +95,12 @@ unary_expression([M | E]) --> minus_excl(M), expression(E).
 
 parenthesis_expression(E) --> spaces, "(", spaces, expression(E), spaces, ")".
 
-qualifiable_id([A| P]) --> spaces, access_expression(A), point_access_expression(P).
-point_access_expression([A | P]) --> ".", access_expression(A), point_access_expression(P).
-point_access_expression(E) --> expression(E).
+qualifiable_id([A | P]) --> access_expression(A), point_access_expression(P).
+point_access_expression(point([A | P])) --> ".", access_expression(A), point_access_expression(P).
+%point_access_expression(E) --> expression(E).
 point_access_expression([]) --> [].
 
-args_expression(R) --> spaces, "(", spaces, rest_expression(R), spaces, ")".
+args_expression(parentArgs(R)) --> spaces, "(", spaces, rest_expression(R), spaces, ")".
 
 rest_expression([E | C]) --> expression(E), comma_expr(C).
 rest_expression([]) --> [].
@@ -108,10 +108,10 @@ rest_expression([]) --> [].
 comma_expr(comma([E | C])) --> spaces, ",",  spaces, expression(E), comma_expr(C).
 comma_expr([]) --> [].
 
-access_expression(I) --> spaces, ident(I), spaces.
+access_expression(I) --> ident(I), spaces.
 access_expression(E) --> spaces, "[", spaces, expression(E), spaces, "]".
 
-array_expression(([R | P])) --> spaces, "[", spaces, rest_expression(R), spaces, "]" , plus_expr(P).
+array_expression([R | P]) --> spaces, "[", spaces, rest_expression(R), spaces, "]" , plus_expr(P).
 
 plus_expr(plus(E)) --> spaces, "+" , spaces, expression(E), plus_expr.
 plus_expr([]) --> [].
@@ -119,5 +119,7 @@ plus_expr([]) --> [].
 lambda_expression([P | E]) --> params_expression(P), spaces, "->", spaces, expression(E).
 
 params_expression(I) --> ident(I).
-params_expression([I | R]) --> spaces, "(",spaces, ident(I), rest_idents(R), spaces, ")".
+params_expression(parentesis([I | R])) --> spaces, "(",spaces, ident(I), rest_idents(R), spaces, ")".
 
+empty(;) --> spaces, ";".
+comentario(C) --> "//", comment(C).

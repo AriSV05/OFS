@@ -1,0 +1,1 @@
+Stream.iterate( 1 , n =>n +  2 ).cut( 10 ).map( it =>console.log(it))

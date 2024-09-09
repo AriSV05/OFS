@@ -8,12 +8,11 @@ export const POST = async (request: Request) => {
     const lines: string[] = requestBodyText.split('\n');
     const codigo: string = lines.slice(2).join('\n');
 
-    let filePath: string = './data/script.js';
+    let filePath: string = './data/script.mjs';
     await overwriteFile(filePath, codigo);
 
     const salida = await executeScript();
 
-    
     const newRes = {
         timestamp: new Date(),
         text: salida
@@ -32,7 +31,7 @@ export const POST = async (request: Request) => {
 import exec from 'child_process';
 const executeScript = async() : Promise<string> => {
     return new Promise((resolve, reject) => {
-      exec.exec(`node data/script.js`, (error, stdout) => {
+      exec.exec(`node data/script.mjs`, (error, stdout) => {
         if (error) {
           reject(`Error al ejecutar el código: ${error.message}`);
         } else {

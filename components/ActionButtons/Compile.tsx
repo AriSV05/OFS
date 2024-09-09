@@ -66,7 +66,7 @@ const Compile = ({
           setTAState(
             "Time Stamp:" +
               responseData.newRes.timestamp +
-              "\n\nimport {Stream} from generador.mjs"+
+              "\n\nimport {Stream} from './generador.mjs'"+
               "\n\n" +
               responseData.newRes.text.text
           );

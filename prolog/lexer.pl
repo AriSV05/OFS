@@ -1,7 +1,3 @@
-empty(;) --> spaces, ";".
-comentario(C) --> "//", comment(C).
-comentario(C) --> "/*", comment(C), "*/".
-
 minus_excl(minus('-')) --> spaces, "-".
 minus_excl(excl('!')) --> spaces, "!".
 
@@ -45,5 +41,5 @@ space --> " ";"\t"; "\n"; "\r".
 spaces --> space, spaces.
 spaces-->[].
 
-comment([C,R]) --> [C], { C \= "\n" }, comment(R).        %%HACER
+comment([S,R]) --> [C], { C \= "\n", atom_codes(S, [C]) },  comment(R).        %%HACER
 comment([]) --> [].
