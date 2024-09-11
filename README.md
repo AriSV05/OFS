@@ -4,6 +4,12 @@ Ariana Solano Vallejos | Nicole Araya Ballestero
 OFS Paradigmas de Programacion - 2023
 UNA
 
+<details>
+  <summary>Imagen del sitio web</summary>
+  
+  ![OFS image](ofs_webpage_phpto/OFS.png)
+</details>
+
 # Descarga
 
 Se descarga la aplicación del correo del profesor en formato zip
